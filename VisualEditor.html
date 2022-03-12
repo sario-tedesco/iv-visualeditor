@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="VisualEditor"
+      content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/RGB_BG_Red192.png" />
     <!--
@@ -40,7 +40,27 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <a href="VisualEditor.html"> Go to Visual Editor </a>
+
+  <center><h2>L'editor potrebbe dare problemi percui invito caldamente a munirsi di backup!</h2>
+
+
+      <textarea id="inputTextToSave" style="width:80%;height: 256px;"></textarea><br>
+
+
+    <em>Selezionare il file "Chapter.txt" da modificare</em><br>
+
+    <!-- The `multiple` attribute lets users select multiple files. -->
+    <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0])" />
+
+    <!-- DownloadHandler -->
+    <button onclick="DownloadHandler()">Save Text to File</button><br></center>
+
+    <!--  -->
+    <p class="content"></p>
+
+    <script src="javascript.js">
+        //console.log(Text);
+    </script>
 
 
   </body>
