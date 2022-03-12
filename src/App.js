@@ -3,12 +3,7 @@ import Navbar from './components/navbar.js';
 
 function App() {
   return (
-    <>
       <Navbar />
-      <div className='container'>
-
-      </div>
-    </>
   );
 }
 
