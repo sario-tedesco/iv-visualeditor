@@ -19,7 +19,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-  <center><h2>L'editor potrebbe dare problemi percui invito caldamente a munirsi di backup!</h2>
+    <center><h2>L'editor potrebbe dare problemi percui invito caldamente a munirsi di backup!</h2>
 
 
       <textarea id="inputTextToSave" style="width:80%;height: 256px;"></textarea><br>
@@ -27,16 +27,16 @@
 
     <em>Selezionare il file "Chapter.txt" da modificare</em><br>
 
+    <script src="../src/components/javascript.js">
+      //console.log(Text);
+    </script>
+
     <!-- The `multiple` attribute lets users select multiple files. -->
     <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0])" />
     <!-- DownloadHandler -->
     <button onclick="DownloadHandler()">Save Text to File</button><br></center>
     <!--  -->
     <p class="content"></p>
-
-    <script src="javascript.js">
-        //console.log(Text);
-    </script>
 
 
   </body>

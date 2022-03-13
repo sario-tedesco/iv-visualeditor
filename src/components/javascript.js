@@ -4,7 +4,7 @@ async function loadFile(file) {
 
     let x = document.getElementById('inputTextToSave');
     x.value = text;
-  }
+}
 //Download Function
 function download(filename, text) {
     let element = document.createElement('a');
