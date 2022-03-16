@@ -1,5 +1,12 @@
 import React from "react";
 import "./VisualEditor.css";
+import {DownloadHandler, loadFile} from "../components/javascript";
+
+/*
+var Chapter;
+var Character;
+var Meta;
+*/
 
 const VisualEditor = () => {
     return(
@@ -7,24 +14,24 @@ const VisualEditor = () => {
         <div className="VisualEditorFullPage">
 
                 <div className="LeftEditor">
-                  <textarea className="TextAreaChapter" id="inputTextToSave" ></textarea>
+                  <textarea className="TextAreaChapter" id="TextAreaChapter" ></textarea>
                   <em>Selezionare il file "Chapter.txt" da modificare</em><br></br>
-                  <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0])" />
-                  <button onclick="DownloadHandler()">Save Text to File</button><p class="content"></p>
+                  <input type="file" id="file-selector" accept=".txt" onchange={loadFile(this.files[0],"TextAreaChapter")} />
+                  <button /*onClick={DownloadHandler("Chapter.txt","TextAreaChapter")}*/>Save Text to File</button><p class="content"></p>
                 </div>
 
 
             <div className="RightEditor">
 
-                <textarea className="TextAreaCharacter" id="inputTextToSave" ></textarea>
+                <textarea className="TextAreaCharacter" id="TextAreaCharacter" ></textarea>
                 <em>Selezionare il file "Character.txt" da modificare</em><br></br>
-                <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0])" />
-                <button onclick="DownloadHandler()">Save Text to File</button><p class="content"></p><br></br>
+                <input type="file" id="file-selector" accept=".txt" /*onchange={loadFile(this.files[0],"TextAreaCharacter")}*/ />
+                <button /*onClick={DownloadHandler("Character.txt","TextAreaCharacter")}*/>Save Text to File</button><p class="content"></p><br></br>
 
-                <textarea className="TextAreaMeta" id="inputTextToSave" ></textarea>
+                <textarea className="TextAreaMeta" id="TextAreaMeta" ></textarea>
                 <em>Selezionare il file "Meta.txt" da modificare</em><br></br>
-                <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0])" />
-                <button onclick="DownloadHandler()">Save Text to File</button><p class="content"></p><br></br>
+                <input type="file" id="file-selector" accept=".txt" /*onchange={loadFile(this.files[0],"TextAreaMeta")}*//>
+                <button /*onClick={DownloadHandler("Meta.txt","TextAreaMeta")}*/>Save Text to File</button><p class="content"></p><br></br>
 
             </div>
         </div>
@@ -32,32 +39,5 @@ const VisualEditor = () => {
     )
   };
 
+
   export default VisualEditor;
-
-  async function loadFile(file) {
-
-    let text = await (new Response(file)).text();
-
-    let x = document.getElementById('inputTextToSave');
-    x.value = text;
-}
-//Download Function
-function download(filename, text) {
-    let element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
-}
-
-//Download Function
-function DownloadHandler(){
-    let FileName = "Chapter.txt";
-    let x = document.getElementById("inputTextToSave").value;
-    download(FileName,x);
-}
