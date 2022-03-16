@@ -1,0 +1,16 @@
+.navbar {
+    text-align: left;
+    overflow: null;
+    background-color: #242424;
+}
+
+.navbar ul {
+    width: 100%;
+}
+
+
+.navbar li {
+    display: inline-block;
+    padding-right: 2%;
+    margin: 0.3%;
+}

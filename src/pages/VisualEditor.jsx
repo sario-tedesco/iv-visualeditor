@@ -1,11 +1,10 @@
 import React from "react";
-import "./Editor.css";
+import "./VisualEditor.css";
 
 const VisualEditor = () => {
     return(
       <>
         <div className="VisualEditorFullPage">
-        <h2>L'editor potrebbe dare problemi percui invito caldamente a munirsi di backup!</h2>
 
                 <div className="LeftEditor">
                   <textarea className="TextAreaChapter" id="inputTextToSave" ></textarea>
