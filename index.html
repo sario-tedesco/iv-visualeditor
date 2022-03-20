@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./Stylesheet.css">
+    <link rel="icon" href="RGB-BG-Red.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#242424" />
+    <meta
+      name="description"
+      content="VisualEditor"
+    />
+    <link rel="apple-touch-icon" href="RGB_BG_Red192.png" />
+
+    <link rel="manifest" href="manifest.json" />
+
+    <title>IV-VisualEditor</title>
+
+    <script src="./javascript.js" ></script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--<a href="VisualEditor.html"> Go to Visual Editor </a>-->
+
+    <div class="VisualEditorFullPage">
+
+      <div class="LeftEditor">
+        <textarea class="TextAreaChapter" id="TextAreaChapter" ></textarea>
+        <em>Selezionare il file "Chapter.txt" da modificare</em><br></br>
+        <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0],1)" />
+        <button onClick="DownloadHandler(1)">Save Chapter</button><p class="content"></p>
+        <br></br>
+        <h3>Recomend do not use this yet</h3>
+        <h2>At least keep a backup ready for everything</h2>
+      </div>
+
+
+  <div class="RightEditor">
+
+      <textarea class="TextAreaCharacter" id="TextAreaCharacter" ></textarea>
+      <em>Selezionare il file "Character.txt" da modificare</em><br></br>
+      <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0],2)" />
+      <button onClick="DownloadHandler(2)">Save Character</button><p class="content"></p><br></br>
+
+      <textarea class="TextAreaMeta" id="TextAreaMeta" ></textarea>
+      <em>Selezionare il file "Meta.txt" da modificare</em><br></br>
+      <input type="file" id="file-selector" accept=".txt" onchange="loadFile(this.files[0],3)" />
+      <button onClick="DownloadHandler(3)">Save Meta</button><p class="content"></p><br></br>
+
+  </div>
+</div>
+
+  </body>
+</html>
